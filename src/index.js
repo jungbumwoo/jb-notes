@@ -5,8 +5,9 @@ import { ApolloProvider } from "react-apollo";
 import client from "./apollo";
 import "./globalStyles";
 
-
 ReactDOM.render(
-    <App />,
-  document.getElementById('root')
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("root")
 );
