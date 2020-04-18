@@ -35,13 +35,13 @@ export const typeDefs = [
 ];
 export const resolvers = {
     Query: {
-        notes: (_, variables, { cache }) => {
+        note: (_, variables, { cache }) => {
             const id = cache.config.dataIdFromObject({
                 __typename: "Note",
                 id: variables.id
             });
             const note = cache.readFragment({ fragment: NOTE_FRAGMENT, id});
-            return note;    
+            return note;
         }
     },
     Mutation: {
